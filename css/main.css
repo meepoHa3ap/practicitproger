@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
+/* Обнуление отступов и установка базовых стилей */
 * {
     margin: 0;
     padding: 0;
@@ -12,23 +13,26 @@ body {
     color: #ffffff; /* Белый цвет для текста */
 }
 
+/* Общие стили для ссылок */
 a {
     text-decoration: none;
-    color: #0000FF; /* Синий цвет для всех ссылок */
+    color: #0000FF; /* Синий цвет по умолчанию для ссылок вне навигации */
 }
 
 a:visited {
-    color: #0000FF; /* Синий для посещенных ссылок */
+    color: #0000FF; /* Синий для посещенных ссылок вне навигации */
 }
 
 a:hover {
-    color: #1E90FF; /* Светлее синий при наведении (опционально) */
+    color: #1E90FF; /* Светлее синий при наведении вне навигации */
 }
 
+/* Стили для изображений */
 img {
     max-width: 100%;
 }
 
+/* Основной контейнер */
 .wrapper {
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(74,40,0,1) 100%);
     width: 100%;
@@ -39,6 +43,7 @@ img {
     margin: 0 auto;
 }
 
+/* Стили для шапки */
 header {
     padding: 50px 0;
 }
@@ -65,12 +70,18 @@ header nav ul li {
     display: inline-block;
 }
 
+/* Стили для ссылок в навигации */
 header nav ul li a {
-    color: #ffffff
+    color: #ffffff; /* Белый цвет для всех ссылок в меню */
 }
 
-header nav ul li.active::after{
-    content:'' ;
+header nav ul li a:visited {
+    color: #ffffff; /* Белый цвет для посещенных ссылок в меню */
+}
+
+/* Подчеркивание для активного пункта */
+header nav ul li.active::after {
+    content: '';
     display: block;
     width: 40px;
     height: 5px;
@@ -79,22 +90,26 @@ header nav ul li.active::after{
     position: relative;
     top: 10px;
     left: -15px;
-
 }
 
+/* Эффект при наведении для обычных ссылок (не активных и не кнопок) */
 header nav ul li:not(.active):not(.btn) a:hover {
-    border-bottom: 5px solid #dc7000;
+    border-bottom: 5px solid #dc7000; /* Оранжевое подчеркивание */
 }
 
+/* Стили для кнопки (Contacts) */
 header nav ul li.btn a {
     background: #fa9021;
     padding: 9px 17px;
     border-radius: 5px;
     transition: all 500ms ease;
-} 
-
-header nav ul li.btn a:hover{
-    background: #ff0000;
+    color: #ffffff; /* Белый цвет текста кнопки */
 }
 
+header nav ul li.btn a:visited {
+    color: #ffffff; /* Белый цвет для посещенных ссылок в кнопке */
+}
 
+header nav ul li.btn a:hover {
+    background: #a02604; /* Смена фона при наведении */
+}
